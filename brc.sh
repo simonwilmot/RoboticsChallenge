@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# Updated to v2 for new (slimmed down) repository
 # This is the main start download script for the Barclays Robotics Challenge build
 # Can be used on any Ubuntu based build - with Arduino and Processing already installed
 # Processing must be configured to use sketchbook and Arduino to use sketches in /home/roboteer or
@@ -33,7 +33,7 @@ confirmLocal () {
 }
 
 
-if  ! confirm "Warning do you want to download and replace your build ?" ; then
+if  ! confirm "Warning do you want to download and replace your build with v2?" ; then
 	exit
 fi
 
