@@ -46,7 +46,7 @@ else
 	localRefresh=false
 fi
 
-MASTER_LOCATION="https://github.com/daverobertson63/RoboticsChallenge.git"
+MASTER_LOCATION="https://github.com/simonwilmot/RoboticsChallenge.git"
 
 
 if [ $localRefresh == false ]; then
