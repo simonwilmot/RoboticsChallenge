@@ -30,14 +30,17 @@
 
 //Define the extremities for the servos
 #define SERVO_CENTRE 90
-#define SERVO_MAX 180
-#define SERVO_MIN 0
+#define SERVO_LEFT 135
+#define SERVO_RIGHT 45
+#define SERVO_UP 45
+#define SERVO_DOWN 135
 
 //Define the maximum range for a sonar ping
 #define MAX_PING_RANGE 1000
 
 //Define how many times to check the sensors for an average reading (Line follower and Ultrasonic)
-#define SAMPLE_SIZE 5
+#define SAMPLE_SIZE_ULTRA 5
+#define SAMPLE_SIZE_LINE 1
 
 //Define how long to wait for a servo to move position
 #define SERVO_WAIT 200
@@ -47,3 +50,4 @@
 
 //Define what value threshold to use for the line followers between BLACK or WHITE
 #define LINE_THRESHOLD 500
+
