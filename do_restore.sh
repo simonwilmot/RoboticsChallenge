@@ -18,10 +18,12 @@ sudo RSYNC_PASSWORD=roboteer325 \
 	--exclude=lost+found/ \
 	robot-restore@robot01.ninja.org.uk::restore_master1_/ \
 	/
+retval=$?
 
-if [ $? == 0 ]; then
-	echo Successfully restored - rebooting now
+if [ $retval -eq 0 ]; then
+        read -p "Successfully restored. Press ENTER to reboot" REPLY
 	sudo shutdown -r now
 else
-	read -n -p "Failed to restore due to one or more errors. Press ENTER to close, then please try again"
+        read -p "Failed to restore due to one or more errors. Press ENTER to close, then please try again" REPLY
 fi
+
