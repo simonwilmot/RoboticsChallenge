@@ -6,18 +6,7 @@
 # the user thats been used to run the config
 #
 
-confirm () {
-    # call with a prompt string or use a default
-    read -r -p "${1:-Are you sure? [y/N]} " response
-    case $response in
-        [yY][eE][sS]|[yY]) 
-            true
-            ;;
-        *)
-            false
-            ;;
-    esac
-}
+MASTER_LOCATION="https://github.com/simonwilmot/RoboticsChallenge.git"
 
 confirmLocal () {
     # call with a prompt string or use a default
@@ -62,14 +51,21 @@ confirmLocal () {
 # Make sure we are in the home directory of the robot user, before we start
 cd ~
 
-if  confirmLocal "Local or Remote refresh ?" ; then
-	localRefresh=true
-else
-	localRefresh=false
-fi
-
-MASTER_LOCATION="https://github.com/simonwilmot/RoboticsChallenge.git"
-
+case $1 in
+	local)
+		localRefresh=true
+		;;
+	remote)
+		localRefresh=false
+		;;
+	*)
+		if confirmLocal "Local or Remote refresh ?" ; then
+			localRefresh=true
+		else
+			localRefresh=false
+		fi
+		;;
+esac
 
 if [ $localRefresh == false ]; then
 
@@ -136,4 +132,5 @@ cp -p ~/RoboticsChallenge/BRC\ Refresh.desktop ~/Desktop
 # can't run it again)
 cp -p ~/RoboticsChallenge/brc.sh ~
 
-notify-send "Robot Refresh" "Completed refresh"
+#notify-send "Robot Refresh" "Completed refresh"
+zenity --info --text="Refresh completed"
