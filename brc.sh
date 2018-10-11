@@ -134,6 +134,6 @@ cp -p ~/RoboticsChallenge/BRC\ Refresh.desktop ~/Desktop
 # (The desktop shortcut points at a copy *outside* the git directory, in case
 # there is an issue refreshing from remote, and we lose the local copy and then
 # can't run it again)
-cp -p ~/RoboticsChallenge/brc.sh ~/
+cp -p ~/RoboticsChallenge/brc.sh ~
 
 notify-send "Robot Refresh" "Completed refresh"
