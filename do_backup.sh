@@ -9,12 +9,16 @@ when prompted by rsync.
 
 __EOF__
 
+# First of all, clean up our image
+sudo apt-get clean
+
 sudo rsync -avxPz --delete \
 	--exclude=lost+found/ \
 	/boot/ \
 	robot-update@robot01.ninja.org.uk::backup_master1_boot/  && \
 sudo rsync -avxPz --delete \
 	--exclude=lost+found/ \
+	--exclude=/tmp/ \
 	/ \
 	robot-update@robot01.ninja.org.uk::backup_master1_/
 retval=$?
