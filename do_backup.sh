@@ -12,6 +12,18 @@ __EOF__
 # First of all, clean up our image
 sudo apt-get clean
 
+# Update build date
+convert ~/Customisations/Robot1-master.png \
+	-fill "#00afe9" \
+	-draw 'rectangle 0,0,87,25' \
+	-family Sans \
+	-weight bold \
+	-pointsize 10 \
+	+antialias \
+	-fill black \
+	-annotate +2+10 "Build Date:\n`date '+%Y-%m-%d %H:%M'`" \
+	~/Customisations/Robot1.png 
+
 sudo rsync -avxPz --delete \
 	--exclude=lost+found/ \
 	/boot/ \
