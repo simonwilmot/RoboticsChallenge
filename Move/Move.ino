@@ -4,15 +4,15 @@
 
 void loop()
 {
-    
+
   forward(1000,255,255);
-  
+
   reverse(1000,255,255);
-  
-  leftSpin(1000,255); 
-  
+
+  leftSpin(1000,255);
+
   rightSpin(1000,255);
-    
+
 }
 
 

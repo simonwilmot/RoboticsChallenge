@@ -4,11 +4,14 @@
 
 void loop()
 {
-   
+
   if (leftLineSensor() == BLACK && rightLineSensor() == BLACK )
-  { 
-    //What should I do now?    
-    return;    
+  {
+    //What command should you type in here?
+    return;
   }
-   
+
+
+
+
 }

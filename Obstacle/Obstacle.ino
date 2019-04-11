@@ -4,15 +4,14 @@
 
 void loop()
 {
-  
+
   if ( leftObstacleSensor() == false && rightObstacleSensor() == false )
   {
-    //What should I do now?
+    //What command should you type in here?
      return;
   }
-     
+
+
+
+
 }
-
-
-
-

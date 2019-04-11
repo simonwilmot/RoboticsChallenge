@@ -3,7 +3,7 @@
 
 void loop()
 {
-	// Basic code for the ballet 
+	// Basic code for the ballet
 
 	forward(1000, 255, 255);
 	halt(500);
@@ -40,11 +40,11 @@ void loop()
 	shoogle();
 
 	leftSpin(500, 255);
-	halt(500);  
+	halt(500);
 	shoogle();
 
 	leftSpin(500, 255);
-	halt(500);  
+	halt(500);
 	shoogle();
 
 	leftSpin(3000, 255);
@@ -68,17 +68,4 @@ void shoogle()
 
 		i--;
 	}
-}  
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
