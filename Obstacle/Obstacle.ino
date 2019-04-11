@@ -7,7 +7,7 @@ void loop()
 
   if ( leftObstacleSensor() == false && rightObstacleSensor() == false )
   {
-    //What command sgould you type in here?
+    //What command should you type in here?
      return;
   }
 
