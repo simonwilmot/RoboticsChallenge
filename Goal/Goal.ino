@@ -8,12 +8,12 @@ void loop()
   int midDistance=0;
   int rightDistance=0;
 
-  tiltCentre();  
-  
+  tiltCentre();
+
   pointLeft();
   leftDistance = Ultrasonic();
-    
-  if ( leftDistance <= midDistance && leftDistance <= rightDistance ) 
+
+  if ( leftDistance <= midDistance && leftDistance <= rightDistance )
   {
     //Shoot!
 
@@ -22,11 +22,11 @@ void loop()
   halt(1000);
 
   //Celebrate the goal!
-  stupidCelebration(); 
-  
+  stupidCelebration();
+
   //Have a rest
   halt(5000);
-    
+
 }
 
 //Demonstrate using functions
@@ -51,31 +51,28 @@ void jiggleBot (int repeats)
 void wiggleBot (int repeats)
 {
   int i = 0;
-  
+
   while (i < repeats)
   {
     leftSpin(200, 255);
     rightSpin(400, 255);
     leftSpin(200,255);
-    
+
     i++;
   }
 }
-  
+
 //Demonstrate recursion
 int noddingBot (int repeats)
 {
   tiltUp();
   tiltDown();
   tiltCentre();
-  
+
   if (repeats < 1)
   {
     return 0;
   }
-  
+
   return noddingBot(repeats - 1);
 }
-
-
-
