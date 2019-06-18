@@ -18,7 +18,7 @@ __EOF__
 	esac
 else
 	# Prompt graphically
-	zenity --question
+	zenity --question 2>/dev/null
 	if [ "$?" -ge "1" ]; then
 		exit
 	fi
