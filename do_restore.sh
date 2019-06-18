@@ -1,12 +1,28 @@
 #!/bin/sh
-cat <<__EOF__
+if [ -z `which zenity` ]; then
+	# Zenity is not installed - use text mode
+	cat <<__EOF__
 
 About to restore entire laptop from master image (hosted online)
 
-You will need to enter the local password for the robot user, when prompted
-by sudo below.
+This will remove any data on this machine.
 
 __EOF__
+	read -r -p "${1:-Are you sure? [y/N]} " response
+	case $response in
+	[yY])
+		;;
+	*)
+		exit
+		;;
+	esac
+else
+	# Prompt graphically
+	zenity --question
+	if [ "$?" -ge "1" ]; then
+		exit
+	fi
+fi
 
 sudo RSYNC_PASSWORD=roboteer325 \
 	rsync -avxPz --delete \
